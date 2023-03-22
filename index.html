@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta Pollería PIKOL - Los mejores pollos de Cusco</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="fondo" id="pollos">
+        <img src="img/Logo-Pikol.png" class="img-pikol" alt="">
+    </div>
+    <div class="menu">
+        <ul data-v-1c8fdb5a="" data-v-3eb1d840="" class="category-slider px-0" style="transform-origin: center top 0px;">
+            <li data-v-1c8fdb5a="" class="category-slider__item rounded px-1 mx-1">
+                <div><a href="#pollos">Pollos</a> <span class="dot">♦</span></div>
+            </li>
+            <li data-v-1c8fdb5a="" class="category-slider__item rounded px-1 mx-1">
+                <div><a href="#criollos">Criollazos</a> <span class="dot">♦</span></div>
+            </li>
+            <li data-v-1c8fdb5a="" class="category-slider__item rounded px-1 mx-1">
+                <div><a href="#casa">Los de la casa</a> <span class="dot">♦</span></div>
+            </li>
+            <li data-v-1c8fdb5a="" class="category-slider__item rounded px-1 mx-1">
+                <div><a href="#sopas">Nuestras sopas</a> <span class="dot">♦</span></div>
+            </li>
+            <li data-v-1c8fdb5a="" class="category-slider__item rounded px-1 mx-1 category-slider__item--active">
+                <div><a href="#clasica">Cotelería clásica</a> <span class="dot">♦</span></div>
+            </li>
+            <li data-v-1c8fdb5a="" class="category-slider__item rounded px-1 mx-1">
+                <div><a href="#autor">Coctelería de autor</a> <span class="dot">♦</span></div>
+            </li>
+            <li data-v-1c8fdb5a="" class="category-slider__item rounded px-1 mx-1">
+                <div><a href="#infusiones">Infusiones </a><span class="dot">♦</span></div>
+            </li>
+            <li data-v-1c8fdb5a="" class="category-slider__item rounded px-1 mx-1">
+                <div><a href="#piteados">Té piteados</a> <span class="dot">♦</span></div>
+            </li>
+            <li data-v-1c8fdb5a="" class="category-slider__item rounded px-1 mx-1">
+                <div><a href="#artesanal">Cerveza artesanal</a> <span class="dot">♦</span></div>
+            </li>
+            <li data-v-1c8fdb5a="" class="category-slider__item rounded px-1 mx-1">
+                <div><a href="#refrescos">Refrescantes</a></div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container mt-4">
+        <div class="platos row">
+            <h2>Pollos:</h2>
+            <div class="col-lg-6 plato">
+                <div class="row">
+                    <div class="col-4">
+                        <img src="img/pollo-entero-pikol.png" alt="Pikol pollo entero">
+                    </div>
+                    <div class="col-6 pedido">
+                        <span class="izq">1 Pollo </span> <span class="der">s/85.00</span>
+                        <div class="linea"></div>
+                    </div>
+
+                    <div class="col-2 m-auto">
+                        <i class="fa-solid fa-plus" id="popup1-button"></i>
+                    </div>
+                </div>
+                <dialog id="popup1-dialog">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <img src="img/pollo-entero-pikol.png" alt="Pollos la brasa entero">
+                        </div>
+                        <div class="col-lg-6 mt-3">
+                            <span class="izq">1 Pollo </span>
+                            <p class="der">s/ <span id="subtotal-pollo">85</span>.00</p>
+                            <div class="linea"></div>
+                        </div>
+                        <div class="col-lg-6 mt-2">
+                            <div class="row">
+                                <div class="col-6 d-flex">
+                                    <span class="fa-solid fa-minus" id="decremento" onclick="decrementar('subtotal-pollo', 'valor-pollo')"></span>
+                                    <input type="text" class="form-control" readonly id="num" value="1">
+                                    <span class="fa-solid fa-plus" id="botonactivo" onclick="incrementar('subtotal-pollo', 'valor-pollo')"></span>
+                                    <p class="sub">s/.<span id="valor-pollo">85</span></p>
+                                </div>
+                                <div class="col-6">
+                                    <button class="enviarpedido" id="popup1-close-button" onclick="sumar('valor-pollo')">Enviar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </dialog>
+                <p>Total: s/<span id="total"></span></p>
+            </div>
+            <div class="col-lg-6 plato">
+                <div class="row">
+                    <div class="col-4">
+                        <img src="img/pollo-entero-pikol.png" alt="">
+                    </div>
+                    <div class="col-6 pedido">
+                        <span class="izq">1/2 Pollo </span> <span class="der">s/45.00</span>
+                        <div class="linea"></div>
+                    </div>
+                    <div class="col-2 m-auto">
+                        <i class="fa-solid fa-plus" id="popup2-button"></i>
+                    </div>
+                </div>
+                <dialog id="popup2-dialog">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <img src="img/pollo-entero-pikol.png" alt="Pollos la brasa entero">
+                        </div>
+                        <div class="col-lg-6 mt-3">
+                            <span class="izq">1 Pollo </span>
+                            <p class="der">s/ <span id="subtotal-medio-pollo">45</span>.00</p>
+                            <div class="linea"></div>
+                        </div>
+                        <div class="col-lg-6 mt-2">
+                            <div class="row">
+                                <div class="col-6 d-flex">
+                                    <span class="fa-solid fa-minus" id="decremento" onclick="decrementar('subtotal-medio-pollo', 'valor-medio-pollo')"></span>
+                                    <input type="text" class="form-control" placeholder="Enter email" readonly id="num" value="1">
+                                    <span class="fa-solid fa-plus" id="botonactivo" onclick="incrementar('subtotal-medio-pollo', 'valor-medio-pollo')"></span>
+                                    <p class="sub">s/.<span id="valor-medio-pollo">45</span></p>
+                                </div>
+                                <div class="col-6">
+                                    <button class="enviarpedido" id="popup2-close-button" onclick="sumar('valor-medio-pollo')">Enviar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </dialog>
+            </div>
+
+            <div class="col-lg-6 plato">
+                <div class="row">
+                    <div class="col-3">
+                        <img src="img/pollo-entero-pikol.png" alt="">
+                    </div>
+                    <div class="col-6 pedido">
+                        <span class="izq">1/4 Pollo </span> <span class="der">&nbsp;s/25.00</span>
+                        <div class="linea"></div>
+                    </div>
+                    <div class="col-3 m-auto">
+                        <!-- <i class="fa-solid fa-minus" onclick="restar(25)"></i>&nbsp;
+                        <input type="number" class="num" value="0" id="input"> -->
+                        <i class="fa-solid fa-plus" onclick="sumarPrecio(25)"></i>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-----criollos-->
+            <h2 id="criollos" class="pt-5">Criollazos:</h2>
+            <div class="col-lg-6 plato">
+                <div class="row">
+                    <div class="col-4">
+                        <img src="img/pollo-entero-pikol.png" alt="">
+                    </div>
+                    <div class="col-6 pedido">
+                        <span class="izq">1 Pollo </span> <span class="der">s/85.00</span>
+                        <div class="linea"></div>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+            </div>
+            <div class="col-lg-6 plato">
+                <div class="row">
+                    <div class="col-4">
+                        <img src="img/pollo-entero-pikol.png" alt="">
+                    </div>
+                    <div class="col-6 pedido">
+                        <span class="izq">1 Pollo </span> <span class="der">s/85.00</span>
+                        <div class="linea"></div>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+            </div>
+            <div class="col-lg-6 plato">
+                <div class="row">
+                    <div class="col-4">
+                        <img src="img/pollo-entero-pikol.png" alt="">
+                    </div>
+                    <div class="col-6 pedido">
+                        <span class="izq">1 Pollo </span> <span class="der">s/85.00</span>
+                        <div class="linea"></div>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+            </div>
+            <div class="col-lg-6 plato">
+                <div class="row">
+                    <div class="col-4">
+                        <img src="img/pollo-entero-pikol.png" alt="">
+                    </div>
+                    <div class="col-6 pedido">
+                        <span class="izq">1 Pollo </span> <span class="der">s/85.00</span>
+                        <div class="linea"></div>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+            </div>
+            <div class="col-lg-6 plato">
+                <div class="row">
+                    <div class="col-4">
+                        <img src="img/pollo-entero-pikol.png" alt="">
+                    </div>
+                    <div class="col-6 pedido">
+                        <span class="izq">1 Pollo </span> <span class="der">s/85.00</span>
+                        <div class="linea"></div>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+            </div>
+            <div class="col-lg-6 plato">
+                <div class="row">
+                    <div class="col-4">
+                        <img src="img/pollo-entero-pikol.png" alt="">
+                    </div>
+                    <div class="col-6 pedido">
+                        <span class="izq">1 Pollo </span> <span class="der">s/85.00</span>
+                        <div class="linea"></div>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="popup.js"></script>
+    <script src="javascript.js"></script>
+</body>
+
+</html>
