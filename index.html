@@ -51,6 +51,22 @@
             </li>
         </ul>
     </div>
+    <div class="container" id="display">
+        <div class="row">
+            <div class="col-md-4">
+                <span id="valores"></span>
+
+            </div>
+            <div class="col-md-4">
+                <a href="pedido.html">Enviar pedido</a>
+
+            </div>
+            <div class="col-md-4">
+                <p id="mtotal"></p>
+            </div>
+        </div>
+
+    </div>
 
     <div class="container mt-4">
         <div class="platos row">
@@ -64,7 +80,6 @@
                         <span class="izq">1 Pollo </span> <span class="der">s/85.00</span>
                         <div class="linea"></div>
                     </div>
-
                     <div class="col-2 m-auto">
                         <i class="fa-solid fa-plus" id="popup1-button"></i>
                     </div>
@@ -75,26 +90,27 @@
                             <img src="img/pollo-entero-pikol.png" alt="Pollos la brasa entero">
                         </div>
                         <div class="col-lg-6 mt-3">
-                            <span class="izq">1 Pollo </span>
+                            <p>1<span class="izq" id="pollo"> Pollo </span></p>
                             <p class="der">s/ <span id="subtotal-pollo">85</span>.00</p>
                             <div class="linea"></div>
                         </div>
                         <div class="col-lg-6 mt-2">
                             <div class="row">
                                 <div class="col-6 d-flex">
-                                    <span class="fa-solid fa-minus" id="decremento" onclick="decrementar('subtotal-pollo', 'valor-pollo')"></span>
-                                    <input type="text" class="form-control" readonly id="num" value="1">
-                                    <span class="fa-solid fa-plus" id="botonactivo" onclick="incrementar('subtotal-pollo', 'valor-pollo')"></span>
+                                    <span class="fa-solid fa-minus" id="decremento" onclick="decrementar('subtotal-pollo','num-pollo', 'valor-pollo')"></span>
+                                    <input type="text" class="form-control input" readonly id="num-pollo" value="1">
+                                    <span class="fa-solid fa-plus" id="botonactivo" onclick="incrementar('subtotal-pollo','num-pollo', 'valor-pollo')"></span>
                                     <p class="sub">s/.<span id="valor-pollo">85</span></p>
                                 </div>
                                 <div class="col-6">
-                                    <button class="enviarpedido" id="popup1-close-button" onclick="sumar('valor-pollo')">Enviar</button>
+                                    <button id="popup1-close-button" class="enviarpedido" onclick="sumar('valor-pollo','num-pollo','pollo')">Enviar</button>
+                                    <!-- <button id="popup1-close-button" class="enviarpedido" onclick="sumarTotal('valor-pollo')">Enviar</button> -->
                                 </div>
                             </div>
                         </div>
                     </div>
                 </dialog>
-                <p>Total: s/<span id="total"></span></p>
+
             </div>
             <div class="col-lg-6 plato">
                 <div class="row">
@@ -102,7 +118,7 @@
                         <img src="img/pollo-entero-pikol.png" alt="">
                     </div>
                     <div class="col-6 pedido">
-                        <span class="izq">1/2 Pollo </span> <span class="der">s/45.00</span>
+                        <span class="izq" id="producto">1/2 Pollo </span> <span class="der">s/45.00</span>
                         <div class="linea"></div>
                     </div>
                     <div class="col-2 m-auto">
@@ -115,20 +131,21 @@
                             <img src="img/pollo-entero-pikol.png" alt="Pollos la brasa entero">
                         </div>
                         <div class="col-lg-6 mt-3">
-                            <span class="izq">1 Pollo </span>
-                            <p class="der">s/ <span id="subtotal-medio-pollo">45</span>.00</p>
+                            <p><span class="izq" id="mediopollo"> 1/2 Pollo </span></p>
+                            <p class="der">s/ <span id="subtotal-mediopollo">45</span>.00</p>
                             <div class="linea"></div>
                         </div>
                         <div class="col-lg-6 mt-2">
                             <div class="row">
                                 <div class="col-6 d-flex">
-                                    <span class="fa-solid fa-minus" id="decremento" onclick="decrementar('subtotal-medio-pollo', 'valor-medio-pollo')"></span>
-                                    <input type="text" class="form-control" placeholder="Enter email" readonly id="num" value="1">
-                                    <span class="fa-solid fa-plus" id="botonactivo" onclick="incrementar('subtotal-medio-pollo', 'valor-medio-pollo')"></span>
-                                    <p class="sub">s/.<span id="valor-medio-pollo">45</span></p>
+                                    <span class="fa-solid fa-minus" id="decremento" onclick="decrementar('subtotal-mediopollo','num-mediopollo', 'valor-mediopollo')"></span>
+                                    <input type="text" class="form-control input" readonly id="num-mediopollo" value="1">
+                                    <span class="fa-solid fa-plus" id="botonactivo" onclick="incrementar('subtotal-mediopollo','num-mediopollo', 'valor-mediopollo')"></span>
+                                    <p class="sub">s/.<span id="valor-mediopollo">45</span></p>
                                 </div>
                                 <div class="col-6">
-                                    <button class="enviarpedido" id="popup2-close-button" onclick="sumar('valor-medio-pollo')">Enviar</button>
+                                    <button id="popup2-close-button" class="enviarpedido" onclick="sumar('valor-mediopollo','num-mediopollo','mediopollo')">Enviar</button>
+                                    <!-- <button id="popup1-close-button" class="enviarpedido" onclick="sumarTotal('valor-pollo')">Enviar</button> -->
                                 </div>
                             </div>
                         </div>
