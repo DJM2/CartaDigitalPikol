@@ -18,8 +18,22 @@ body {
 }
 
 .titulo {
-  font-size: 3.2em;
+  font-size: 3em;
   color: #d49400;
+  text-align: center;
+}
+
+.subrayado {
+  width: 5%;
+  height: 4px;
+  background: #d49400;
+  margin: auto;
+  margin-bottom: 1em;
+}
+
+.boton-wasa {
+  background: #25D366;
+  padding: 2em;
 }
 
 #display {

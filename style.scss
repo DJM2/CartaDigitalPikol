@@ -5,6 +5,7 @@ html {
 $fondo: rgb(2, 2, 2);
 $principal:#d49400;
 $cards:#fff;
+$wasa:#25D366;
 body {
     background-color: $fondo !important;
 }
@@ -21,8 +22,22 @@ body {
 }
 
 .titulo {
-    font-size: 3.2em;
+    font-size: 3em;
     color: #d49400;
+    text-align: center;
+}
+
+.subrayado {
+    width: 5%;
+    height: 4px;
+    background: $principal;
+    margin: auto;
+    margin-bottom: 1em;
+}
+
+.boton-wasa {
+    background: $wasa;
+    padding: 2em;
 }
 
 #display {

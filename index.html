@@ -68,45 +68,54 @@
     </div>
     <dialog id="popup1-dialog">
         <div class="row">
-            <div class="row">
-                <div class="col-12 d-flex">
-                    <span id="valores-pop" style="display:block"></span>
-                    <span id="numeroT-pop" class="m-auto"></span>
-                    <p id="mtotal-pop"></p>
-                </div>
-                <div class="col-6" style="text-align: center; margin: auto; display: grid;">
-                    <a onclick="wasa()" class="btn btn-primary">Enviar pedidso</a>
-                    <script>
-                        function wasa() {
-                            var valores = document.getElementById("valores-pop").textContent;
-                            var numeroT = document.getElementById("numeroT-pop").textContent;
-                            var mtotal = document.getElementById("mtotal-pop").textContent;
-
-                            var telefono = "51921136755";
-                            var mensaje = "Hola, mi pedido es el siguiente:\n" + valores + "\n\nTotal: " + mtotal;
-                            var url = "https://wa.me/" + telefono + "?text=" + encodeURIComponent(mensaje);
-                            window.open(url);
-                        }
-                    </script>
-                    <button id="popup1-close-button" class="enviarpedido" onclick="refresh()">Hacer nuevo
-                        pedido</button>
-                    <script>
-                        function refresh() {
-                            location.reload(true);
-                        }
-                    </script>
-                </div>
-                <div class="col-12">
-
+            <div class="col-12">
+                <div class="row mb-5">
+                    <div class="col-6">
+                        <span id="valores-pop" style="display:block"></span>
+                    </div>
+                    <div class="col-6">
+                        <span id="numeroT-pop" class="m-auto"></span>
+                        <p id="mtotal-pop"></p>
+                    </div>
                 </div>
             </div>
+            <div class="col-12" style="text-align: center; margin: auto; display: grid;">
+                <div class="row">
+                    <div class="col-6">
+                        <a onclick="wasa()" class="boton-wasa">Enviar pedido</a>
+                        <script>
+                            function wasa() {
+                                var valores = document.getElementById("valores-pop").textContent;
+                                var numeroT = document.getElementById("numeroT-pop").textContent;
+                                var mtotal = document.getElementById("mtotal-pop").textContent;
 
+                                var telefono = "51921136755";
+                                var mensaje = "Hola, mi pedido es el siguiente:\n" + valores + "\n\nTotal: " + mtotal;
+                                var url = "https://wa.me/" + telefono + "?text=" + encodeURIComponent(mensaje);
+                                window.open(url);
+                            }
+                        </script>
+                    </div>
+                    <div class="col-6">
+                        <button id="popup1-close-button" class="enviarpedido" onclick="refresh()">Hacer nuevo
+                            pedido</button>
+                        <script>
+                            function refresh() {
+                                location.reload(true);
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
         </div>
     </dialog>
 
     <div class="container mt-4">
         <div class="platos row">
-            <h2 id="pollos" class="titulo">Pollos:</h2>
+            <div class="col-12">
+                <h2 id="pollos" class="titulo">Pollos</h2>
+                <div class="subrayado"></div>
+            </div>
             <div class="col-lg-6 plato">
                 <div class="row">
                     <div class="col-lg-6 col-sm-12">
@@ -167,7 +176,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-6 plato" style="margin-bottom: 10em;">
+            <div class="col-lg-6 plato">
                 <div class="row">
                     <div class="col-lg-6 col-sm-12">
                         <img src="img/cuarto-pollo-a-la-brasa-pikol-polleria.png" alt="Pikol medio pollo">
@@ -196,7 +205,10 @@
                     </div>
                 </div>
             </div>
-            <h2 id="criollos" class="titulo">Criollazos:</h2>
+            <div class="col-lg-12">
+                <h2 id="criollos" class="titulo" style="padding-top:1em">Criollazos</h2>
+                <div class="subrayado"></div>
+            </div>
             <div class="col-lg-6 plato">
                 <div class="row">
                     <div class="col-lg-6 col-sm-12">
