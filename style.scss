@@ -5,9 +5,13 @@ html {
 $fondo: rgb(2, 2, 2);
 $principal:#d49400;
 $cards:#fff;
-$wasa:#25D366;
+$wasa:#12c454;
 body {
     background-color: $fondo !important;
+}
+
+.precioEnvio {
+    border-bottom: 1px dashed orange
 }
 
 .fondo {
@@ -37,7 +41,45 @@ body {
 
 .boton-wasa {
     background: $wasa;
-    padding: 2em;
+    color: #fff;
+    text-decoration: none;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+    border-radius: 8px;
+    transition: 0.4s;
+    cursor: pointer;
+    &:hover {
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        color: $wasa;
+        background: #fff;
+        border: 1px solid $wasa;
+        transition: 0.4s;
+    }
+}
+
+#popup1-dialog {
+    border-radius: 10px;
+    border: 1px solid #ff0000
+}
+
+.enviarpedido {
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+    border-radius: 8px;
+    cursor: pointer;
+    &:hover {
+        color: #000;
+        background: #fff;
+        border: 1px solid #000;
+        transition: 0.4s;
+    }
 }
 
 #display {
@@ -132,15 +174,6 @@ p {
     background-color: #fff;
     border-width: 1px;
     border-color: #80808026;
-    .enviarpedido {
-        color: #fff;
-        border-radius: 4px;
-        background: #000;
-        border: none;
-        font-size: 14px;
-        font-weight: bold;
-        padding: 0.6em;
-    }
     #botonactivo {
         font-size: 16px;
         margin: auto;

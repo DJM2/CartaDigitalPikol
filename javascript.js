@@ -40,7 +40,7 @@ function sumar(precio, num, producto) {
     display.style.display = "block";
     var valores = document.getElementById('valores');
     var izq = document.getElementById(producto).innerHTML;
-    valores.innerHTML += '<br> → ' + cantidad + '(' + izq + ')' + ' = s/.' + sumaTotal.toFixed(2);
+    valores.innerHTML += '<br> ➤ ' + cantidad + '(' + izq + ')' + ' = s/.' + sumaTotal.toFixed(2);
 
     //acumular precio
     var precioTotal = parseFloat(document.getElementById('mtotal').innerHTML.replace('s/.', ''));
@@ -58,11 +58,26 @@ function sumar(precio, num, producto) {
 function pedido() {
     const valores = document.getElementById("valores").innerHTML;
     const valorespop = document.getElementById("valores-pop");
-    valorespop.innerHTML = valores;
+    /*valorespop.innerHTML = valores; */
 
-    /* const cant = document.getElementById("numeroT").innerHTML;
-    const cantpop = document.getElementById("numeroT-pop");
-    cantpop.innerHTML = '<br>' + cant; */
+    valorespop.innerHTML = '';
+
+    const div = document.createElement('div');
+    div.className = 'col-12';
+
+    const valoresArray = valores.split('<br>');
+    for (let i = 0; i < valoresArray.length; i++) {
+        const span = document.createElement('span');
+        span.innerHTML = valoresArray[i];
+        div.appendChild(span);
+
+        if (i !== valoresArray.length - 1) {
+            const br = document.createElement('br');
+            div.appendChild(br);
+        }
+    }
+
+    valorespop.appendChild(div);
 
     const precio = document.getElementById("mtotal").innerHTML;
     const preciopop = document.getElementById("mtotal-pop");
