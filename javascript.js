@@ -7,6 +7,7 @@ function incrementar(precio, num, valor) {
     var subtotalElement = document.getElementById(precio);
     var subtotalValue = parseFloat(subtotalElement.innerHTML);
     var nuevoSubtotal = subtotalValue * numValue;
+    //agregar multiplicacion oprecio * cantidad
     var valor = document.getElementById(valor);
     valor.innerHTML = nuevoSubtotal.toFixed(2);
 }
@@ -41,14 +42,34 @@ function sumar(precio, num, producto) {
 
     var precioTotal = parseFloat(document.getElementById('mtotal').innerHTML.replace('s/.', ''));
 
-    // Verificar que el valor sea numérico
     if (isNaN(precioTotal)) {
         precioTotal = 0;
     }
-
     var nuevoTotal = precioTotal + sumaTotal;
     document.getElementById('mtotal').innerHTML = 's/.' + nuevoTotal.toFixed(2);
+    var nTotal = 0;
+    var nTotal = cantidad + nTotal;
+    document.getElementById('numeroT').innerHTML = nTotal;
 }
+
+function pedido() {
+    const valores = document.getElementById("valores").innerHTML;
+    const valorespop = document.getElementById("valores-pop");
+    valorespop.innerHTML = valores;
+
+    const cant = document.getElementById("numeroT").innerHTML;
+    const cantpop = document.getElementById("numeroT-pop");
+    cantpop.innerHTML = '<br>' + cant;
+
+    const precio = document.getElementById("mtotal").innerHTML;
+    const preciopop = document.getElementById("mtotal-pop");
+    preciopop.innerHTML = '<br>' + precio;
+}
+
+
+
+
+
 
 /* function sumarTotal(precioId) {
     var precio = parseFloat(document.getElementById(precioId).innerHTML);

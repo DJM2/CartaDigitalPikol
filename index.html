@@ -53,199 +53,118 @@
     </div>
     <div class="container" id="display">
         <div class="row">
-            <div class="col-md-4">
-                <span id="valores"></span>
-
+            <div class="col-4 d-flex">
+                <span id="valores" style="display:block"></span>
+                <span id="numeroT" class="m-auto"></span>
             </div>
-            <div class="col-md-4">
-                <a href="pedido.html">Enviar pedido</a>
-
+            <div class="col-4" style="text-align: center; margin: auto; display: grid;">
+                <a onclick="pedido()" id="popup1-button">Enviar pedido</a>
             </div>
-            <div class="col-md-4">
+            <div class="col-4">
                 <p id="mtotal"></p>
             </div>
         </div>
-
     </div>
+    <dialog id="popup1-dialog">
+        <div class="row">
+            <div class="row">
+                <div class="col-12 d-flex">
+                    <span id="valores-pop" style="display:block"></span>
+                    <span id="numeroT-pop" class="m-auto"></span>
+                    <p id="mtotal-pop"></p>
+                </div>
+                <div class="col-6" style="text-align: center; margin: auto; display: grid;">
+                    <a onclick="wasa()" class="btn btn-primary">Enviar pedidso</a>
+                    <script>
+                        function wasa() {
+                            var valores = document.getElementById("valores-pop").textContent;
+                            var numeroT = document.getElementById("numeroT-pop").textContent;
+                            var mtotal = document.getElementById("mtotal-pop").textContent;
+
+                            var telefono = "51921136755";
+                            var mensaje = "Hola, mi pedido es el siguiente:\n" + valores + "\n\nTotal: " + mtotal;
+                            var url = "https://wa.me/" + telefono + "?text=" + encodeURIComponent(mensaje);
+                            window.open(url);
+                        }
+                    </script>
+                    <button id="popup1-close-button" class="enviarpedido" onclick="refresh()">Hacer nuevo pedido</button>
+                    <script>
+                        function refresh() {
+                            location.reload(true);
+                        }
+                    </script>
+                </div>
+                <div class="col-12">
+
+                </div>
+            </div>
+
+        </div>
+    </dialog>
 
     <div class="container mt-4">
         <div class="platos row">
             <h2>Pollos:</h2>
             <div class="col-lg-6 plato">
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-lg-6 col-sm-12">
                         <img src="img/pollo-entero-pikol.png" alt="Pikol pollo entero">
                     </div>
-                    <div class="col-6 pedido">
-                        <span class="izq">1 Pollo </span> <span class="der">s/85.00</span>
-                        <div class="linea"></div>
-                    </div>
-                    <div class="col-2 m-auto">
-                        <i class="fa-solid fa-plus" id="popup1-button"></i>
-                    </div>
-                </div>
-                <dialog id="popup1-dialog">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <img src="img/pollo-entero-pikol.png" alt="Pollos la brasa entero">
-                        </div>
-                        <div class="col-lg-6 mt-3">
-                            <p>1<span class="izq" id="pollo"> Pollo </span></p>
-                            <p class="der">s/ <span id="subtotal-pollo">85</span>.00</p>
-                            <div class="linea"></div>
-                        </div>
-                        <div class="col-lg-6 mt-2">
-                            <div class="row">
-                                <div class="col-6 d-flex">
-                                    <span class="fa-solid fa-minus" id="decremento" onclick="decrementar('subtotal-pollo','num-pollo', 'valor-pollo')"></span>
-                                    <input type="text" class="form-control input" readonly id="num-pollo" value="1">
-                                    <span class="fa-solid fa-plus" id="botonactivo" onclick="incrementar('subtotal-pollo','num-pollo', 'valor-pollo')"></span>
-                                    <p class="sub">s/.<span id="valor-pollo">85</span></p>
-                                </div>
-                                <div class="col-6">
-                                    <button id="popup1-close-button" class="enviarpedido" onclick="sumar('valor-pollo','num-pollo','pollo')">Enviar</button>
-                                    <!-- <button id="popup1-close-button" class="enviarpedido" onclick="sumarTotal('valor-pollo')">Enviar</button> -->
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="row">
+                            <div class="col-12 pedido">
+                                <span class="izq">1 Pollo </span>
+                                <p class="der">s/.<span id="subtotal-pollo">85</span></p>
+                                <div class="linea"></div>
+                            </div>
+                            <div class="col-12 m-auto">
+                                <div class="row">
+                                    <div class="col-6 d-flex dialog">
+                                        <span class="fa-solid fa-minus" id="decremento" onclick="decrementar('subtotal-pollo','num-pollo', 'valor-pollo')"></span>
+                                        <input type="text" class="form-control input" readonly id="num-pollo" value="1">
+                                        <span class="fa-solid fa-plus" id="botonactivo" onclick="incrementar('subtotal-pollo','num-pollo', 'valor-pollo')"></span>
+                                    </div>
+                                    <div class="col-6 dialog d-flex">
+                                        <button class="enviarpedido" onclick="sumar('valor-pollo','num-pollo','subtotal-pollo')">Agregar s/.<span
+                                                id="valor-pollo">85</span></button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </dialog>
-
+                </div>
             </div>
             <div class="col-lg-6 plato">
                 <div class="row">
-                    <div class="col-4">
-                        <img src="img/pollo-entero-pikol.png" alt="">
+                    <div class="col-lg-6 col-sm-12">
+                        <img src="img/pollo-entero-pikol.png" alt="Pikol pollo entero">
                     </div>
-                    <div class="col-6 pedido">
-                        <span class="izq" id="producto">1/2 Pollo </span> <span class="der">s/45.00</span>
-                        <div class="linea"></div>
-                    </div>
-                    <div class="col-2 m-auto">
-                        <i class="fa-solid fa-plus" id="popup2-button"></i>
-                    </div>
-                </div>
-                <dialog id="popup2-dialog">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <img src="img/pollo-entero-pikol.png" alt="Pollos la brasa entero">
-                        </div>
-                        <div class="col-lg-6 mt-3">
-                            <p><span class="izq" id="mediopollo"> 1/2 Pollo </span></p>
-                            <p class="der">s/ <span id="subtotal-mediopollo">45</span>.00</p>
-                            <div class="linea"></div>
-                        </div>
-                        <div class="col-lg-6 mt-2">
-                            <div class="row">
-                                <div class="col-6 d-flex">
-                                    <span class="fa-solid fa-minus" id="decremento" onclick="decrementar('subtotal-mediopollo','num-mediopollo', 'valor-mediopollo')"></span>
-                                    <input type="text" class="form-control input" readonly id="num-mediopollo" value="1">
-                                    <span class="fa-solid fa-plus" id="botonactivo" onclick="incrementar('subtotal-mediopollo','num-mediopollo', 'valor-mediopollo')"></span>
-                                    <p class="sub">s/.<span id="valor-mediopollo">45</span></p>
-                                </div>
-                                <div class="col-6">
-                                    <button id="popup2-close-button" class="enviarpedido" onclick="sumar('valor-mediopollo','num-mediopollo','mediopollo')">Enviar</button>
-                                    <!-- <button id="popup1-close-button" class="enviarpedido" onclick="sumarTotal('valor-pollo')">Enviar</button> -->
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="row">
+                            <div class="col-12 pedido">
+                                <span class="izq">1 Pollo </span>
+                                <p class="der">s/.<span id="subtotal-mediopollo">45</span></p>
+                                <div class="linea"></div>
+                            </div>
+                            <div class="col-12 m-auto">
+                                <div class="row">
+                                    <div class="col-6 d-flex dialog">
+                                        <span class="fa-solid fa-minus" id="decremento" onclick="decrementar('subtotal-mediopollo','num-mediopollo', 'valor-mediopollo')"></span>
+                                        <input type="text" class="form-control input" readonly id="num-mediopollo" value="1">
+                                        <span class="fa-solid fa-plus" id="botonactivo" onclick="incrementar('subtotal-mediopollo','num-mediopollo', 'valor-mediopollo')"></span>
+                                    </div>
+                                    <div class="col-6 d-flex dialog">
+                                        <button class="enviarpedido" onclick="sumar('valor-mediopollo','num-pollo','subtotal-mediopollo')">Agregar s/.<span
+                                                id="valor-mediopollo">45</span></button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </dialog>
-            </div>
-
-            <div class="col-lg-6 plato">
-                <div class="row">
-                    <div class="col-3">
-                        <img src="img/pollo-entero-pikol.png" alt="">
-                    </div>
-                    <div class="col-6 pedido">
-                        <span class="izq">1/4 Pollo </span> <span class="der">&nbsp;s/25.00</span>
-                        <div class="linea"></div>
-                    </div>
-                    <div class="col-3 m-auto">
-                        <!-- <i class="fa-solid fa-minus" onclick="restar(25)"></i>&nbsp;
-                        <input type="number" class="num" value="0" id="input"> -->
-                        <i class="fa-solid fa-plus" onclick="sumarPrecio(25)"></i>
-                    </div>
                 </div>
             </div>
 
 
-
-            <!-----criollos-->
-            <h2 id="criollos" class="pt-5">Criollazos:</h2>
-            <div class="col-lg-6 plato">
-                <div class="row">
-                    <div class="col-4">
-                        <img src="img/pollo-entero-pikol.png" alt="">
-                    </div>
-                    <div class="col-6 pedido">
-                        <span class="izq">1 Pollo </span> <span class="der">s/85.00</span>
-                        <div class="linea"></div>
-                    </div>
-                    <div class="col-2"></div>
-                </div>
-            </div>
-            <div class="col-lg-6 plato">
-                <div class="row">
-                    <div class="col-4">
-                        <img src="img/pollo-entero-pikol.png" alt="">
-                    </div>
-                    <div class="col-6 pedido">
-                        <span class="izq">1 Pollo </span> <span class="der">s/85.00</span>
-                        <div class="linea"></div>
-                    </div>
-                    <div class="col-2"></div>
-                </div>
-            </div>
-            <div class="col-lg-6 plato">
-                <div class="row">
-                    <div class="col-4">
-                        <img src="img/pollo-entero-pikol.png" alt="">
-                    </div>
-                    <div class="col-6 pedido">
-                        <span class="izq">1 Pollo </span> <span class="der">s/85.00</span>
-                        <div class="linea"></div>
-                    </div>
-                    <div class="col-2"></div>
-                </div>
-            </div>
-            <div class="col-lg-6 plato">
-                <div class="row">
-                    <div class="col-4">
-                        <img src="img/pollo-entero-pikol.png" alt="">
-                    </div>
-                    <div class="col-6 pedido">
-                        <span class="izq">1 Pollo </span> <span class="der">s/85.00</span>
-                        <div class="linea"></div>
-                    </div>
-                    <div class="col-2"></div>
-                </div>
-            </div>
-            <div class="col-lg-6 plato">
-                <div class="row">
-                    <div class="col-4">
-                        <img src="img/pollo-entero-pikol.png" alt="">
-                    </div>
-                    <div class="col-6 pedido">
-                        <span class="izq">1 Pollo </span> <span class="der">s/85.00</span>
-                        <div class="linea"></div>
-                    </div>
-                    <div class="col-2"></div>
-                </div>
-            </div>
-            <div class="col-lg-6 plato">
-                <div class="row">
-                    <div class="col-4">
-                        <img src="img/pollo-entero-pikol.png" alt="">
-                    </div>
-                    <div class="col-6 pedido">
-                        <span class="izq">1 Pollo </span> <span class="der">s/85.00</span>
-                        <div class="linea"></div>
-                    </div>
-                    <div class="col-2"></div>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -253,9 +172,9 @@
 
 
 
-
-    <script src="popup.js"></script>
     <script src="javascript.js"></script>
+    <script src="popup.js"></script>
+
 </body>
 
 </html>
