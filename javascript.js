@@ -83,7 +83,7 @@ function wasa() {
     var mtotal = document.getElementById("mtotal-pop").innerHTML.trim();
 
     var telefono = "51921136755";
-    var mensaje = "Hola Pikol, mi pedido es el siguiente:\n" + valores + "\nTotal: " + '<strong>' + mtotal + '</strong>';
+    var mensaje = "Hola Pikol, mi pedido es el siguiente:\n" + valores + "\n\nTotal: " + mtotal;
     var url = "https://wa.me/" + telefono + "?text=" + encodeURIComponent(mensaje);
     window.open(url);
 }
