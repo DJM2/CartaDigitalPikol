@@ -59,7 +59,7 @@
                 <span id="numeroT" class="m-auto"></span>
             </div>
             <div class="col-4" style="text-align: center; margin: auto; display: grid;">
-                <a onclick="pedido()" id="popup1-button">Enviar pedido</a>
+                <a onclick="pedido()" id="popup1-button"> Ver pedido</a>
             </div>
             <div class="col-4">
                 <p id="mtotal"></p>
@@ -71,7 +71,7 @@
             <div class="col-12">
                 <div class="row mb-5">
                     <div class="col-12 precioEnvio mb-3">
-                        <span style="display:block; float:left; margin-top: 1.4em;"> Total:</span>
+                        <span style="display:block; float:left; margin-top: 0.4em;"> Total:</span>
                         <p style="float:right" id="mtotal-pop"></p>
                     </div>
                     <div class="col-12">
@@ -82,33 +82,12 @@
             <div class="col-12 mb-4" style="text-align: center; margin: auto; display: grid;">
                 <div class="row">
                     <div class="col-6">
-                        <a onclick="wasa()" class="boton-wasa">Enviar pedido</a>
-                        <script>
-                            function wasa() {
-                                /* var valores = document.getElementById("valores-pop").innerHTML;
-                                valores = valores.replace(/<br>/g, '\n'); */
-                                var valores = document.getElementById("valores-pop").innerHTML;
-                                valores = valores.replace(/<[^>]+>/g, '');
-                                valores = valores.replace(/<br>/g, '\n');
-
-                                var mtotal = document.getElementById("mtotal-pop").textContent;
-
-                                var telefono = "51921136755";
-                                var mensaje = "Hola Pikol, mi pedido es el siguiente:\n\n" + valores + "\n\nTotal: " + mtotal;
-                                var url = "https://wa.me/" + telefono + "?text=" + encodeURIComponent(mensaje);
-                                window.open(url);
-                            }
-                        </script>
+                        <a onclick="wasa()" class="boton-wasa"><i class="fab fa-whatsapp"></i> Enviar pedido</a>
                     </div>
                     <div class="col-6">
                         <a id="popup1-close-button" class="enviarpedido" onclick="refresh()">Nuevo
                             pedido
                         </a>
-                        <script>
-                            function refresh() {
-                                location.reload(true);
-                            }
-                        </script>
                     </div>
                 </div>
             </div>
@@ -128,7 +107,7 @@
 
                     </div>
                     <div class="col-lg-6 col-sm-12">
-                        <div class="row">
+                        <div class="row margin-left">
                             <div class="col-12 pedido">
                                 <span class="izq" id="pollo">1 Pollo </span>
                                 <p class="der">s/.<span id="subtotal-pollo">85</span></p>
@@ -157,7 +136,7 @@
                         <img src="img/medio-pollo-a-la-brasa-pikol.png" alt="Pikol medio pollo">
                     </div>
                     <div class="col-lg-6 col-sm-12">
-                        <div class="row">
+                        <div class="row margin-left">
                             <div class="col-12 pedido">
                                 <span class="izq" id="medio-pollo">1/2 Pollo </span>
                                 <p class="der">s/.<span id="subtotal-mediopollo">45</span></p>
@@ -187,7 +166,7 @@
                         <img src="img/cuarto-pollo-a-la-brasa-pikol-polleria.png" alt="Pikol medio pollo">
                     </div>
                     <div class="col-lg-6 col-sm-12">
-                        <div class="row">
+                        <div class="row margin-left">
                             <div class="col-12 pedido">
                                 <span class="izq" id="cuarto-pollo">1/4 Pollo </span>
                                 <p class="der">s/.<span id="subtotal-4pollo">25</span></p>
@@ -220,7 +199,7 @@
                         <img src="img/lomo-saltado-pikol-cusco-djm2.jpg" alt="Pikol medio pollo">
                     </div>
                     <div class="col-lg-6 col-sm-12">
-                        <div class="row">
+                        <div class="row margin-left">
                             <div class="col-12 pedido">
                                 <span class="izq" id="lomo-saltado">Lomito Saltado </span>
                                 <p class="der">s/.<span id="sub-lomo">35</span></p>
@@ -249,22 +228,22 @@
                         <img src="img/Tallarin-saltado-djm2-pikol.jpg" alt="Pikol medio pollo">
                     </div>
                     <div class="col-lg-6 col-sm-12">
-                        <div class="row">
+                        <div class="row margin-left">
                             <div class="col-12 pedido">
-                                <span class="izq" id="lomo-saltado">Lomito Saltado </span>
-                                <p class="der">s/.<span id="sub-lomo">35</span></p>
+                                <span class="izq" id="tallarin-saltado">Tallarin Saltado </span>
+                                <p class="der">s/.<span id="sub-tallarin">35</span></p>
                                 <div class="linea"></div>
                             </div>
                             <div class="col-12 mt-2">
                                 <div class="row">
                                     <div class="col-6 d-flex dialog">
-                                        <span class="fa-solid fa-minus" id="decremento" onclick="decrementar('sub-lomo','num-lomo', 'valor-lomo')"></span>
-                                        <input type="text" class="form-control input" readonly id="num-lomo" value="1">
-                                        <span class="fa-solid fa-plus" id="botonactivo" onclick="incrementar('sub-lomo','num-lomo', 'valor-lomo')"></span>
+                                        <span class="fa-solid fa-minus" id="decremento" onclick="decrementar('sub-tallarin','num-tallarin', 'valor-tallarin')"></span>
+                                        <input type="text" class="form-control input" readonly id="num-tallarin" value="1">
+                                        <span class="fa-solid fa-plus" id="botonactivo" onclick="incrementar('sub-tallarin','num-tallarin', 'valor-tallarin')"></span>
                                     </div>
                                     <div class="col-6 d-flex dialog">
-                                        <button class="enviarpedido" onclick="sumar('valor-lomo','num-lomo','lomo-saltado')">Agregar s/.<span
-                                                id="valor-lomo">35</span></button>
+                                        <button class="enviarpedido" onclick="sumar('valor-tallarin','num-tallarin','tallarin-saltado')">Agregar s/.<span
+                                                id="valor-tallarin">35</span></button>
                                     </div>
                                 </div>
                             </div>
@@ -272,12 +251,160 @@
                     </div>
                 </div>
             </div>
+            <div class="col-lg-6 plato">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                        <img src="img/chaufa-pikol-djm2.jpg" alt="Chaufa Pikol DJM2">
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="row margin-left">
+                            <div class="col-12 pedido">
+                                <span class="izq" id="chaufa-pikol">Chaufa Pikol </span>
+                                <p class="der">s/.<span id="sub-chaufa">30</span></p>
+                                <div class="linea"></div>
+                            </div>
+                            <div class="col-12 mt-2">
+                                <div class="row">
+                                    <div class="col-6 d-flex dialog">
+                                        <span class="fa-solid fa-minus" id="decremento" onclick="decrementar('sub-chaufa','num-chaufa', 'valor-chaufa')"></span>
+                                        <input type="text" class="form-control input" readonly id="num-chaufa" value="1">
+                                        <span class="fa-solid fa-plus" id="botonactivo" onclick="incrementar('sub-chaufa','num-chaufa', 'valor-chaufa')"></span>
+                                    </div>
+                                    <div class="col-6 d-flex dialog">
+                                        <button class="enviarpedido" onclick="sumar('valor-chaufa','num-chaufa','chaufa-pikol')">Agregar s/.<span
+                                                id="valor-chaufa">30</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 plato">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                        <img src="img/pesto-con-chuleta-pikol-DJM2.png" alt="Pesto con Chuleta Pikol DJM2">
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="row margin-left">
+                            <div class="col-12 pedido">
+                                <span class="izq" id="pesto-chuleta">Pesto con Chuleta </span>
+                                <p class="der">s/.<span id="sub-pesto">30</span></p>
+                                <div class="linea"></div>
+                            </div>
+                            <div class="col-12 mt-2">
+                                <div class="row">
+                                    <div class="col-6 d-flex dialog">
+                                        <span class="fa-solid fa-minus" id="decremento" onclick="decrementar('sub-pesto','num-pesto', 'valor-pesto')"></span>
+                                        <input type="text" class="form-control input" readonly id="num-pesto" value="1">
+                                        <span class="fa-solid fa-plus" id="botonactivo" onclick="incrementar('sub-pesto','num-pesto', 'valor-pesto')"></span>
+                                    </div>
+                                    <div class="col-6 d-flex dialog">
+                                        <button class="enviarpedido" onclick="sumar('valor-pesto','num-pesto','pesto-chuleta')">Agregar s/.<span
+                                                id="valor-pesto">30</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 plato">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                        <img src="img/bistek-a-lo-pobre-pikol-djm2.jpg" alt="Pesto con Chuleta Pikol DJM2">
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="row margin-left">
+                            <div class="col-12 pedido">
+                                <span class="izq" id="bisktec-pobre">Bistek a lo Pobre</span>
+                                <p class="der">s/.<span id="sub-bistec">30</span></p>
+                                <div class="linea"></div>
+                            </div>
+                            <div class="col-12 mt-2">
+                                <div class="row">
+                                    <div class="col-6 d-flex dialog">
+                                        <span class="fa-solid fa-minus" id="decremento" onclick="decrementar('sub-bistec','num-bistec', 'valor-bistec')"></span>
+                                        <input type="text" class="form-control input" readonly id="num-bistec" value="1">
+                                        <span class="fa-solid fa-plus" id="botonactivo" onclick="incrementar('sub-bistec','num-bistec', 'valor-bistec')"></span>
+                                    </div>
+                                    <div class="col-6 d-flex dialog">
+                                        <button class="enviarpedido" onclick="sumar('valor-bistec','num-bistec','bistec-pobre')">Agregar s/.<span
+                                                id="valor-bistec">30</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!----Los de casa-->
+            <div class="col-lg-12">
+                <h2 id="casa" class="titulo" style="padding-top:1em">Los de casa</h2>
+                <div class="subrayado"></div>
+            </div>
+            <div class="col-lg-6 plato">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                        <img src="img/Brochetas-de-pollo-pikol-DJM2.jpg" alt="Pikol medio pollo">
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="row margin-left">
+                            <div class="col-12 pedido">
+                                <span class="izq" id="brochetas-pollo">Brochetas de Pollo</span>
+                                <p class="der">s/.<span id="sub-bro">30</span></p>
+                                <div class="linea"></div>
+                            </div>
+                            <div class="col-12 mt-2">
+                                <div class="row">
+                                    <div class="col-6 d-flex dialog">
+                                        <span class="fa-solid fa-minus" id="decremento" onclick="decrementar('sub-bro','num-bro', 'valor-bro')"></span>
+                                        <input type="text" class="form-control input" readonly id="num-bro" value="1">
+                                        <span class="fa-solid fa-plus" id="botonactivo" onclick="incrementar('sub-bro','num-bro', 'valor-bro')"></span>
+                                    </div>
+                                    <div class="col-6 d-flex dialog">
+                                        <button class="enviarpedido" onclick="sumar('valor-bro','num-bro','brochetas-pollo')">Agregar s/.<span
+                                                id="valor-bro">30</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 plato">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                        <img src="img/fetuccini-a-lo-alfredo-pikol-djm2.webp" alt="Pikol medio pollo">
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="row margin-left">
+                            <div class="col-12 pedido">
+                                <span class="izq" id="f-alfredo">Fetuccini a lo Alfredo</span>
+                                <p class="der">s/.<span id="sub-alfredo">25</span></p>
+                                <div class="linea"></div>
+                            </div>
+                            <div class="col-12 mt-2">
+                                <div class="row">
+                                    <div class="col-6 d-flex dialog">
+                                        <span class="fa-solid fa-minus" id="decremento" onclick="decrementar('sub-alfredo','num-alfredo', 'valor-alfredo')"></span>
+                                        <input type="text" class="form-control input" readonly id="num-alfredo" value="1">
+                                        <span class="fa-solid fa-plus" id="botonactivo" onclick="incrementar('sub-alfredo','num-alfredo', 'valor-alfredo')"></span>
+                                    </div>
+                                    <div class="col-6 d-flex dialog">
+                                        <button class="enviarpedido" onclick="sumar('valor-alfredo','num-alfredo','f-alfredo')">Agregar s/.<span
+                                                id="valor-alfredo">25</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
-
-
-
-
 
     <script src="javascript.js"></script>
     <script src="popup.js"></script>

@@ -61,6 +61,7 @@ body {
 }
 
 .enviarpedido {
+  font-size: 14px;
   background: #000;
   color: #fff;
   text-decoration: none;
@@ -69,6 +70,7 @@ body {
   padding-left: 1em;
   padding-right: 1em;
   border-radius: 8px;
+  border: 1px solid #000;
   cursor: pointer;
 }
 .enviarpedido:hover {
@@ -193,7 +195,7 @@ p {
   font-size: 20px;
 }
 .dialog .input {
-  width: 38px;
+  width: 42px;
   height: 40px;
   margin: auto;
 }
@@ -215,6 +217,9 @@ p {
 .platos .plato:hover {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   transition: 0.4S;
+}
+.platos .plato .margin-left {
+  margin-left: -4em;
 }
 .platos img {
   height: auto;
@@ -271,6 +276,9 @@ p {
   }
   .platos .plato img {
     width: 108%;
+  }
+  .platos .plato .margin-left {
+    margin-left: 0em;
   }
   dialog {
     width: 100%;

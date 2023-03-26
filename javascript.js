@@ -58,28 +58,45 @@ function sumar(precio, num, producto) {
 function pedido() {
     const valores = document.getElementById("valores").innerHTML;
     const valorespop = document.getElementById("valores-pop");
-    /*valorespop.innerHTML = valores; */
 
-    valorespop.innerHTML = '';
+    const valoresConSaltos = valores.replace(/<br>/g, '\n');
 
-    const div = document.createElement('div');
-    div.className = 'col-12';
+    const valorespopConSaltos = valorespop.innerHTML + '\n' + valoresConSaltos;
 
-    const valoresArray = valores.split('<br>');
-    for (let i = 0; i < valoresArray.length; i++) {
-        const span = document.createElement('span');
-        span.innerHTML = valoresArray[i];
-        div.appendChild(span);
-
-        if (i !== valoresArray.length - 1) {
-            const br = document.createElement('br');
-            div.appendChild(br);
-        }
-    }
-
-    valorespop.appendChild(div);
+    valorespop.innerHTML = valorespopConSaltos.split('\n').map(val => val.trim() !== '' ? `<br>${val}` : '').join('');
 
     const precio = document.getElementById("mtotal").innerHTML;
     const preciopop = document.getElementById("mtotal-pop");
-    preciopop.innerHTML = '<br>' + precio;
+    preciopop.innerHTML = '\n' + precio;
 }
+
+
+
+function refresh() {
+    location.reload(true);
+}
+
+function wasa() {
+    var valores = document.getElementById("valores-pop").innerText;
+    valores = valores.replace(/<br>/g, '\n');
+
+    var mtotal = document.getElementById("mtotal-pop").innerHTML.trim();
+
+    var telefono = "51921136755";
+    var mensaje = "Hola Pikol, mi pedido es el siguiente:\n" + valores + "\nTotal: " + '<strong>' + mtotal + '</strong>';
+    var url = "https://wa.me/" + telefono + "?text=" + encodeURIComponent(mensaje);
+    window.open(url);
+}
+
+
+/* function wasa() {
+    var valores = document.getElementById("valores-pop").innerHTML;
+    valores = valores.replace(/<\/?[^>]+(>|$)/g, '');
+
+    var mtotal = document.getElementById("mtotal-pop").textContent;
+
+    var telefono = "51921136755";
+    var mensaje = "Hola Pikol, mi pedido es el siguiente:\n\n" + valores + "\n\nTotal: " + mtotal;
+    var url = "https://wa.me/" + telefono + "?text=" + encodeURIComponent(mensaje);
+    window.open(url);
+} */
