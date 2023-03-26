@@ -74,7 +74,7 @@
                         <span style="display:block; float:left; margin-top: 1.4em;"> Total:</span>
                         <p style="float:right" id="mtotal-pop"></p>
                     </div>
-                    <div class="col-6">
+                    <div class="col-12">
                         <span id="valores-pop" style="display:block; float:left"></span>
                     </div>
                 </div>
@@ -85,19 +85,23 @@
                         <a onclick="wasa()" class="boton-wasa">Enviar pedido</a>
                         <script>
                             function wasa() {
-                                var valores = document.getElementById("valores-pop").textContent;
-                                var numeroT = document.getElementById("numeroT-pop").textContent;
+                                /* var valores = document.getElementById("valores-pop").innerHTML;
+                                valores = valores.replace(/<br>/g, '\n'); */
+                                var valores = document.getElementById("valores-pop").innerHTML;
+                                valores = valores.replace(/<[^>]+>/g, '');
+                                valores = valores.replace(/<br>/g, '\n');
+
                                 var mtotal = document.getElementById("mtotal-pop").textContent;
 
                                 var telefono = "51921136755";
-                                var mensaje = "Hola, mi pedido es el siguiente:\n" + valores + "\n\nTotal: " + mtotal;
+                                var mensaje = "Hola Pikol, mi pedido es el siguiente:\n\n" + valores + "\n\nTotal: " + mtotal;
                                 var url = "https://wa.me/" + telefono + "?text=" + encodeURIComponent(mensaje);
                                 window.open(url);
                             }
                         </script>
                     </div>
                     <div class="col-6">
-                        <a id="popup1-close-button" class="enviarpedido" onclick="refresh()">Hacer nuevo
+                        <a id="popup1-close-button" class="enviarpedido" onclick="refresh()">Nuevo
                             pedido
                         </a>
                         <script>
