@@ -3,7 +3,11 @@ html {
 }
 
 body {
-  background-color: rgb(2, 2, 2) !important;
+  /* background-color: $fondo !important; */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7411764706), rgba(0, 0, 0, 0.3803921569)), url(img/fondo-carta-digital-menu.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .precioEnvio {
@@ -22,9 +26,10 @@ body {
 }
 
 .titulo {
-  font-size: 3em;
+  font-size: 2em;
   color: #d49400;
   text-align: center;
+  padding-top: 2em;
 }
 
 .subrayado {
@@ -83,7 +88,7 @@ body {
 #display {
   display: none;
   height: auto;
-  background: #000;
+  background: #f00;
   position: fixed;
   bottom: 0px;
   color: #fff;
@@ -92,7 +97,6 @@ body {
   margin-left: 90px;
   border-radius: 10px;
   z-index: 9;
-  border: 1px solid #d49400;
 }
 #display a {
   color: #ffffff;
@@ -103,10 +107,11 @@ body {
   text-decoration: none;
   position: relative;
   margin-bottom: 2em;
+  cursor: pointer;
 }
 #display a:hover {
-  background: #d49400;
-  color: #fff;
+  background: #ffffff;
+  color: #000;
   transition: 0.4s;
 }
 #display p {
@@ -225,6 +230,8 @@ p {
   height: auto;
   width: 85%;
   margin-left: -12px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .platos .pedido {
   position: relative;
@@ -275,7 +282,8 @@ p {
     margin-top: 0;
   }
   .platos .plato img {
-    width: 108%;
+    width: 400px;
+    height: 200px;
   }
   .platos .plato .margin-left {
     margin-left: 0em;
