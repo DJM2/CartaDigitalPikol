@@ -9,10 +9,9 @@ body {
   background-size: cover;
 }
 
-.selectp {
-  font-size: 0.8em !important;
-}
-
+/* .selectp {
+    font-size: 0.8em!important;
+} */
 .precioEnvio {
   border-bottom: 1px dashed orange;
 }
@@ -272,10 +271,10 @@ p {
 }
 
 @media (max-width: 480px) {
-  .tituselect {
-    float: right !important;
-    margin-right: 2em !important;
-  }
+  /* .tituselect {
+      float: right!important;
+      margin-right: 2em!important;
+  } */
   #display {
     margin-left: 0px !important;
   }
