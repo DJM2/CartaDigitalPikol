@@ -7,11 +7,14 @@ $principal:#d49400;
 $cards:#fff;
 $wasa:#12c454;
 body {
-    /* background-color: $fondo !important; */
     background: linear-gradient(to bottom, #000000bd, #00000061), url(img/fondo-carta-digital-menu.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.selectp {
+    font-size: 0.8em!important;
 }
 
 .precioEnvio {
@@ -272,6 +275,10 @@ p {
 }
 
 @media (max-width: 480px) {
+    .tituselect {
+        float: right!important;
+        margin-right: 2em!important;
+    }
     #display {
         margin-left: 0px!important;
     }
