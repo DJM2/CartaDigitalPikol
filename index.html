@@ -1477,7 +1477,7 @@
                             <div class="col-12 pedido">
                                 <div class="row">
                                     <div class="col-6">
-                                        <span class="izq" id="zenit">Zenit</span>
+                                        <span class="izq" id="zenit">Zenit:</span>
                                         <select class="selectP zeniti" name="zeniti" id="zeniti" onchange="updateInfusionText('zenit', 'zeniti', 'zenitt')">
                                             <option selected>...</option>
                                             <option value="Trigonometria (IBU 19 - ALC5%)">Trigonometria (IBU 19 - ALC5%)</option>
@@ -1504,6 +1504,97 @@
                                     <div class="col-6 d-flex dialog">
                                         <button class="enviarpedido" onclick="sumar('valor-zenit','num-zenit','zenitt')">Agregar
                                             s/.<span id="valor-zenit">15</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 plato">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                        <img src="img/bardock-djm2-pikol.jpg" alt="Cerveza Bardock djm2 Pikol">
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="row margin-left">
+                            <div class="col-12 pedido">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <span class="izq" id="bardock">Bardock:</span>
+                                        <select class="selectP bardocki" name="bardocki" id="bardocki" onchange="updateInfusionText('bardock', 'bardocki', 'bardockt')">
+                                            <option selected>...</option>
+                                            <option value="Pale Ale(ALC 4.88%)">Pale Ale(ALC 4.88%)</option>
+                                            <option value="Red Ale (ALC 7.39%)">Red Ale (ALC 7.39%)</option>
+                                            <option value="Porter (ALC 5.07%)">Porter (ALC 5.07%)</option>
+                                            <option value="Ipa (ALC 7.94%)">Ipa (ALC 7.94%)</option>
+                                        </select>
+                                        <span id="bardockt" style="display: none;">0</span>
+
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="der">s/.<span id="sub-bardock">15</span></p>
+                                    </div>
+                                </div>
+                                <div class="linea" style="margin-top:1em"></div>
+                            </div>
+                            <div class="col-12 mt-2">
+                                <div class="row">
+                                    <div class="col-6 d-flex dialog">
+                                        <span class="fa-solid fa-minus" id="decremento" onclick="decrementar('sub-bardock','num-bardock', 'valor-bardock')"></span>
+                                        <input type="text" class="form-control input" readonly id="num-bardock" value="1">
+                                        <span class="fa-solid fa-plus" id="botonactivo" onclick="incrementar('sub-bardock','num-bardock', 'valor-bardock')"></span>
+                                    </div>
+                                    <div class="col-6 d-flex dialog">
+                                        <button class="enviarpedido" onclick="sumar('valor-bardock','num-bardock','bardockt')">Agregar
+                                            s/.<span id="valor-bardock">15</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--- Refrescantes -->
+            <div class="col-lg-12">
+                <h2 id="refrescos" class="titulo">Refrescantes</h2>
+                <div class="subrayado"></div>
+            </div>
+            <div class="col-lg-6 plato">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                        <img src="img/cerveza-zenit-pikol.png" alt="Cerveza zenit djm2 Pikol">
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="row margin-left">
+                            <div class="col-12 pedido">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <span class="izq" id="limonada">Limonada:</span>
+                                        <select class="selectP zeniti" name="zeniti" id="limonadai" onchange="updateInfusionText('limonada', 'limonadai', 'limonadat')">
+                                            <option selected>...</option>
+                                            <option value="Vaso">Vaso</option>
+                                            <option value="Jarra">Jarra</option>
+                                        </select>
+                                        <span id="limonadat">0</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="der">s/.<span id="sub-limonada">15</span></p>
+                                    </div>
+                                </div>
+                                <div class="linea" style="margin-top:1em"></div>
+                            </div>
+                            <div class="col-12 mt-2">
+                                <div class="row">
+                                    <div class="col-6 d-flex dialog">
+                                        <span class="fa-solid fa-minus" id="decremento" onclick="decrementar('sub-limonada','num-limonada', 'valor-limonada')"></span>
+                                        <input type="text" class="form-control input" readonly id="num-limonada" value="1">
+                                        <span class="fa-solid fa-plus" id="botonactivo" onclick="incrementar('sub-limonada','num-limonada', 'valor-limonada')"></span>
+                                    </div>
+                                    <div class="col-6 d-flex dialog">
+                                        <button class="enviarpedido" onclick="sumar('valor-limonada','num-limonada','limonadat')">Agregar
+                                            s/.<span id="valor-limonada">15</span></button>
                                     </div>
                                 </div>
                             </div>

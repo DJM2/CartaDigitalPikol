@@ -113,37 +113,19 @@ function wasa() {
 
     var mtotal = document.getElementById("mtotal-pop").innerHTML.trim();
 
-    var telefono = "51921136755";
+    var telefono = "51935736496";
     var mensaje = "Hola Pikol, mi pedido es el siguiente:\n" + valores + "\n\nTotal: " + mtotal;
     var url = "https://wa.me/" + telefono + "?text=" + encodeURIComponent(mensaje);
     window.open(url);
 }
 
-
-/* const selectElement = document.querySelector('.nieve');
-
-selectElement.addEventListener('change', (event) => {
-    const infusionText = document.getElementById("infusioni").innerHTML;
-    const resultado = document.querySelector('#infusion');
-    resultado.textContent = `${infusionText} ${event.target.value}`;
-}); */
-
-/* function updateInfusionText(infusionId, selectId, resultId) {
-    const selectElement = document.getElementById(selectId);
-
-    selectElement.addEventListener('change', (event) => {
-        const infusionText = document.getElementById(infusionId).innerHTML;
-        const resultado = document.getElementById(resultId);
-        resultado.textContent = `${infusionText} ${event.target.value}`;
-    });
-} */
 document.addEventListener("DOMContentLoaded", function() {
     updateInfusionText("zenit", "zeniti", "zenitt");
     updateInfusionText("infusion", "infusioni", "infusiont");
+    updateInfusionText("bardock", "bardocki", "bardockt");
 
     function updateInfusionText(infusionId, selectId, resultId) {
         const selectElement = document.getElementById(selectId);
-
         selectElement.addEventListener("change", (event) => {
             const infusionText = document.getElementById(infusionId).innerHTML;
             const resultado = document.getElementById(resultId);
@@ -151,3 +133,31 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+
+/* document.addEventListener("DOMContentLoaded", function() {
+    updateLimonadaText("limonada", "limonadai", "limonadat");
+
+    function updateLimonadaText(limonadaId, selectId, resultId) {
+        const selectElement = document.getElementById(selectId);
+        selectElement.addEventListener("change", (event) => {
+            const infusionText = document.getElementById(limonadaId).innerHTML;
+            const resultado = document.getElementById(resultId);
+            resultado.textContent = `${infusionText} ${event.target.value}`;
+        });
+    }
+}); */
+document.addEventListener("DOMContentLoaded", function() {
+    updateLimonadaText("limonada", "limonadai", "limonadat");
+});
+
+function updateLimonadaText(limonadaId, selectId, resultId) {
+    const selectElement = document.getElementById(selectId);
+    selectElement.addEventListener("change", (event) => {
+        const infusionText = document.getElementById(limonadaId).innerHTML;
+        const resultado = document.getElementById('sub-limonada');
+        const precio = (event.target.value === "Vaso") ? 6 : 15;
+        resultado.innerHTML = precio;
+        const texto = document.getElementById(resultId);
+        texto.innerHTML = `${infusionText} ${event.target.value}`;
+    });
+}
