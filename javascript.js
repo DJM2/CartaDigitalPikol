@@ -33,6 +33,28 @@ function decrementar(precio, num, valor) {
 //Sumar
 var nTotal = 0;
 
+/* function sumar(precio, num, producto, infusiones) {
+    var sumaTotal = parseFloat(document.getElementById(precio).innerHTML);
+    var cantidad = parseFloat(document.getElementById(num).value);
+    var display = document.getElementById('display');
+    display.style.display = "block";
+    var valores = document.getElementById('valores');
+    var izq = document.getElementById(producto).innerHTML;
+    var select = document.getElementById(selectId).value;
+    valores.innerHTML += '<br> ➤ ' + cantidad + '(' + izq + select + ')' + ' = s/.' + sumaTotal.toFixed(2);
+
+    //acumular precio
+    var precioTotal = parseFloat(document.getElementById('mtotal').innerHTML.replace('s/.', ''));
+    if (isNaN(precioTotal)) {
+        precioTotal = 0;
+    }
+    var nuevoTotal = precioTotal + sumaTotal;
+    document.getElementById('mtotal').innerHTML = 's/.' + nuevoTotal.toFixed(2);
+
+    // acumular cantidad en nTotal
+    nTotal += cantidad;
+    document.getElementById('numeroT').innerHTML = nTotal;
+} */
 function sumar(precio, num, producto) {
     var sumaTotal = parseFloat(document.getElementById(precio).innerHTML);
     var cantidad = parseFloat(document.getElementById(num).value);
@@ -53,7 +75,16 @@ function sumar(precio, num, producto) {
     // acumular cantidad en nTotal
     nTotal += cantidad;
     document.getElementById('numeroT').innerHTML = nTotal;
+    numeroT.classList.remove('rezoom');
+    numeroT.classList.add('zoom');
+    setTimeout(function() {
+        numeroT.classList.remove('zoom');
+        numeroT.classList.add('rezoom');
+    }, 400);
 }
+
+
+
 
 function pedido() {
     const valores = document.getElementById("valores").innerHTML;
@@ -89,14 +120,34 @@ function wasa() {
 }
 
 
-/* function wasa() {
-    var valores = document.getElementById("valores-pop").innerHTML;
-    valores = valores.replace(/<\/?[^>]+(>|$)/g, '');
+/* const selectElement = document.querySelector('.nieve');
 
-    var mtotal = document.getElementById("mtotal-pop").textContent;
+selectElement.addEventListener('change', (event) => {
+    const infusionText = document.getElementById("infusioni").innerHTML;
+    const resultado = document.querySelector('#infusion');
+    resultado.textContent = `${infusionText} ${event.target.value}`;
+}); */
 
-    var telefono = "51921136755";
-    var mensaje = "Hola Pikol, mi pedido es el siguiente:\n\n" + valores + "\n\nTotal: " + mtotal;
-    var url = "https://wa.me/" + telefono + "?text=" + encodeURIComponent(mensaje);
-    window.open(url);
+/* function updateInfusionText(infusionId, selectId, resultId) {
+    const selectElement = document.getElementById(selectId);
+
+    selectElement.addEventListener('change', (event) => {
+        const infusionText = document.getElementById(infusionId).innerHTML;
+        const resultado = document.getElementById(resultId);
+        resultado.textContent = `${infusionText} ${event.target.value}`;
+    });
 } */
+document.addEventListener("DOMContentLoaded", function() {
+    updateInfusionText("zenit", "zeniti", "zenitt");
+    updateInfusionText("infusion", "infusioni", "infusiont");
+
+    function updateInfusionText(infusionId, selectId, resultId) {
+        const selectElement = document.getElementById(selectId);
+
+        selectElement.addEventListener("change", (event) => {
+            const infusionText = document.getElementById(infusionId).innerHTML;
+            const resultado = document.getElementById(resultId);
+            resultado.textContent = `${infusionText} ${event.target.value}`;
+        });
+    }
+});

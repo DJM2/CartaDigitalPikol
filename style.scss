@@ -275,6 +275,23 @@ p {
     }
 }
 
+.selectP {
+    border-radius: 4px;
+    font-size: 0.8em;
+    width: 100%;
+}
+
+.zoom {
+    font-size: 2.5rem;
+    transition: 0.5s;
+}
+
+.rezoom {
+    font-size: 1rem;
+    transition: 0.5s;
+    opacity: 1;
+}
+
 @media (max-width: 480px) {
     /* .tituselect {
         float: right!important;

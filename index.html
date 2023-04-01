@@ -1106,6 +1106,7 @@
                                     <div class="col-6 d-flex dialog">
                                         <button class="enviarpedido" onclick="sumar('valor-chuspa','num-chuspa','chuspa')">Agregar s/.<span
                                                 id="valor-chuspa">25</span></button>
+
                                     </div>
                                 </div>
                             </div>
@@ -1359,10 +1360,25 @@
                     <div class="col-lg-6 col-sm-12">
                         <div class="row margin-left">
                             <div class="col-12 pedido">
-                                <span class="izq" id="infusion" style="font-size:13px">Manzanilla, Coca, Hierba, Luisa,
-                                    Muña, Anis, Té canela</span>
-                                <p class="der">s/.<span id="sub-infusion">3.50</span></p>
-                                <div class="linea"></div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <span class="izq" id="infusion">Infusion</span>
+                                        <select class="selectP infusioni" name="infusioni" id="infusioni" onchange="updateInfusionText('infusion', 'infusioni', 'infusiont')">
+                                            <option selected>...</option>
+                                            <option value="Manzanilla">Manzanilla</option>
+                                            <option value="Coca">Coca</option>
+                                            <option value="Hierba Luisa">Hierba Luisa</option>
+                                            <option value="Anís">Anís</option>
+                                            <option value="Té canela">Té canela</option>
+                                        </select>
+                                        <span id="infusiont" style="display: none;">0</span>
+
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="der">s/.<span id="sub-infusion">3.50</span></p>
+                                    </div>
+                                </div>
+                                <div class="linea" style="margin-top:1em"></div>
                             </div>
                             <div class="col-12 mt-2">
                                 <div class="row">
@@ -1372,8 +1388,8 @@
                                         <span class="fa-solid fa-plus" id="botonactivo" onclick="incrementar('sub-infusion','num-infusion', 'valor-infusion')"></span>
                                     </div>
                                     <div class="col-6 d-flex dialog">
-                                        <button class="enviarpedido" onclick="sumar('valor-infusion','num-infusion','infusion')">Agregar s/.<span
-                                                id="valor-infusion">3.50</span></button>
+                                        <button class="enviarpedido" onclick="sumar('valor-infusion','num-infusion','infusiont')">Agregar
+                                            s/.<span id="valor-infusion">3.50</span></button>
                                     </div>
                                 </div>
                             </div>
@@ -1451,31 +1467,32 @@
                 <h2 id="artesanal" class="titulo">Cerveza artesanal</h2>
                 <div class="subrayado"></div>
             </div>
-            <!-- <div class="col-lg-6 plato">
+            <div class="col-lg-6 plato">
                 <div class="row">
                     <div class="col-lg-6 col-sm-12">
-                        <img src="img/cerveza-zenit-pikol.png" alt="Infusiones Pikol">
+                        <img src="img/cerveza-zenit-pikol.png" alt="Cerveza zenit djm2 Pikol">
                     </div>
                     <div class="col-lg-6 col-sm-12">
                         <div class="row margin-left">
                             <div class="col-12 pedido">
                                 <div class="row">
                                     <div class="col-6">
-                                        <span class="izq tituselect" id="Zenit">Zenith</span>:
-                                        <select class="form-select selectp" id="zenit" name="zenit" aria-label="Default select example">
-                                            <option selected value="Trigonometria (IBU 19 - ALC5%)">Trigonometria (IBU
-                                                19 - ALC5%)</option>
-                                            <option value="Pale Ale(IBU 34 - ALC2%)">Pale Ale(IBU 34 - ALC2%)</option>
-                                            <option value="La hinchada peruana">La hinchada peruana</option>
-                                            <option value="Porter con Quinua (IBU 28 - ALC 6.5%)">Porter con Quinua (IBU
-                                                28 - ALC 6.5%)</option>
+                                        <span class="izq" id="zenit">Zenit</span>
+                                        <select class="selectP zeniti" name="zeniti" id="zeniti" onchange="updateInfusionText('zenit', 'zeniti', 'zenitt')">
+                                            <option selected>...</option>
+                                            <option value="Trigonometria (IBU 19 - ALC5%)">Trigonometria (IBU 19 - ALC5%)</option>
+                                            <option value="Pale Ale (IBU 34 - ALC2%)">Pale Ale (IBU 34 - ALC2%)</option>
+                                            <option value="La hinchada peruana (IBU 19 - ALC5.5%)">La hinchada peruana (IBU 19 - ALC5.5%)</option>
+                                            <option value="Porter con quinua (IBU 28 - ALC6.5%)">Porter con quinua (IBU 28 - ALC6.5%)</option>
                                         </select>
+                                        <span id="zenitt" style="display: none;">0</span>
+
                                     </div>
                                     <div class="col-6">
-                                        <p class="der">s/.<span id="sub-zenit">3.50</span></p>
+                                        <p class="der">s/.<span id="sub-zenit">15</span></p>
                                     </div>
                                 </div>
-                                <div class="linea"></div>
+                                <div class="linea" style="margin-top:1em"></div>
                             </div>
                             <div class="col-12 mt-2">
                                 <div class="row">
@@ -1485,22 +1502,22 @@
                                         <span class="fa-solid fa-plus" id="botonactivo" onclick="incrementar('sub-zenit','num-zenit', 'valor-zenit')"></span>
                                     </div>
                                     <div class="col-6 d-flex dialog">
-                                        <button class="enviarpedido" onclick="sumar('valor-zenit','num-zenit','zenit')">Agregar s/.<span
-                                                id="valor-zenit">3.50</span></button>
+                                        <button class="enviarpedido" onclick="sumar('valor-zenit','num-zenit','zenitt')">Agregar
+                                            s/.<span id="valor-zenit">15</span></button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div> -->
+            </div>
 
         </div>
     </div>
 
+
     <script src="javascript.js"></script>
     <script src="popup.js"></script>
-
 </body>
 
 </html>
