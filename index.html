@@ -1362,7 +1362,7 @@
                             <div class="col-12 pedido">
                                 <div class="row">
                                     <div class="col-6">
-                                        <span class="izq" id="infusion">Infusion</span>
+                                        <span class="izq" id="infusion">Infusion:</span>
                                         <select class="selectP infusioni" name="infusioni" id="infusioni" onchange="updateInfusionText('infusion', 'infusioni', 'infusiont')">
                                             <option selected>...</option>
                                             <option value="Manzanilla">Manzanilla</option>
@@ -1564,7 +1564,7 @@
             <div class="col-lg-6 plato">
                 <div class="row">
                     <div class="col-lg-6 col-sm-12">
-                        <img src="img/cerveza-zenit-pikol.png" alt="Cerveza zenit djm2 Pikol">
+                        <img src="img/limonada.webp" alt="Limonada djm2 Pikol">
                     </div>
                     <div class="col-lg-6 col-sm-12">
                         <div class="row margin-left">
@@ -1572,15 +1572,17 @@
                                 <div class="row">
                                     <div class="col-6">
                                         <span class="izq" id="limonada">Limonada:</span>
-                                        <select class="selectP zeniti" name="zeniti" id="limonadai" onchange="updateInfusionText('limonada', 'limonadai', 'limonadat')">
+                                        <select class="selectP zeniti" name="zeniti" id="limonadai" onchange="updateLimonadaText('limonada', 'limonadai', 'limonadat')">
                                             <option selected>...</option>
                                             <option value="Vaso">Vaso</option>
                                             <option value="Jarra">Jarra</option>
+                                            <option value="vasof">vasof</option>
+                                            <option value="Jarraf">Jarraf</option>
                                         </select>
-                                        <span id="limonadat">0</span>
+                                        <span id="limonadat" style="display: none;">0</span>
                                     </div>
                                     <div class="col-6">
-                                        <p class="der">s/.<span id="sub-limonada">15</span></p>
+                                        <p class="der">s/.<span id="sub-limonada">0.00</span></p>
                                     </div>
                                 </div>
                                 <div class="linea" style="margin-top:1em"></div>
@@ -1588,13 +1590,13 @@
                             <div class="col-12 mt-2">
                                 <div class="row">
                                     <div class="col-6 d-flex dialog">
-                                        <span class="fa-solid fa-minus" id="decremento" onclick="decrementar('sub-limonada','num-limonada', 'valor-limonada')"></span>
+                                        <span class="fa-solid fa-minus" id="decremento" onclick="decrementar('sub-limonada','num-limonada', 'valor-limonada', 'sub-limonada','valor-limonada')"></span>
                                         <input type="text" class="form-control input" readonly id="num-limonada" value="1">
                                         <span class="fa-solid fa-plus" id="botonactivo" onclick="incrementar('sub-limonada','num-limonada', 'valor-limonada')"></span>
                                     </div>
                                     <div class="col-6 d-flex dialog">
                                         <button class="enviarpedido" onclick="sumar('valor-limonada','num-limonada','limonadat')">Agregar
-                                            s/.<span id="valor-limonada">15</span></button>
+                                            s/.<span id="valor-limonada">0.00</span></button>
                                     </div>
                                 </div>
                             </div>
@@ -1602,7 +1604,416 @@
                     </div>
                 </div>
             </div>
+            <div class="col-lg-6 plato">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                        <img src="img/limonada.webp" alt="Maracuya djm2 Pikol">
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="row margin-left">
+                            <div class="col-12 pedido">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <span class="izq" id="maracuya">Maracuya:</span>
+                                        <select class="selectP zeniti" name="zeniti" id="maracuyai" onchange="updateLimonadaText('maracuya', 'maracuyai', 'maracuyat')">
+                                            <option selected>...</option>
+                                            <option value="Vaso">Vaso</option>
+                                            <option value="Jarra">Jarra</option>
+                                        </select>
+                                        <span id="maracuyat" style="display: none;">0</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="der">s/.<span id="sub-maracuya">0.00</span></p>
+                                    </div>
+                                </div>
+                                <div class="linea" style="margin-top:1em"></div>
+                            </div>
+                            <div class="col-12 mt-2">
+                                <div class="row">
+                                    <div class="col-6 d-flex dialog">
+                                        <span class="fa-solid fa-minus" id="decremento" onclick="decrementar('sub-maracuya','num-maracuya', 'valor-maracuya', 'sub-maracuya','valor-maracuya')"></span>
+                                        <input type="text" class="form-control input" readonly id="num-maracuya" value="1">
+                                        <span class="fa-solid fa-plus" id="botonactivo" onclick="incrementar('sub-maracuya','num-maracuya', 'valor-maracuya')"></span>
+                                    </div>
+                                    <div class="col-6 d-flex dialog">
+                                        <button class="enviarpedido" onclick="sumar('valor-maracuya','num-maracuya','maracuyat')">Agregar
+                                            s/.<span id="valor-maracuya">0.00</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 plato">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                        <img src="img/limonada.webp" alt="Maracuya djm2 Pikol">
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="row margin-left">
+                            <div class="col-12 pedido">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <span class="izq" id="morada">Chicha Morada:</span>
+                                        <select class="selectP zeniti" name="zeniti" id="moradai" onchange="updateLimonadaText()">
+                                            <option selected>...</option>
+                                            <option value="Vaso">Vaso</option>
+                                            <option value="Jarra">Jarra</option>
+                                        </select>
+                                        <span id="moradat" style="display: none;">0</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="der">s/.<span id="sub-morada">0.00</span></p>
+                                    </div>
+                                </div>
+                                <div class="linea" style="margin-top:1em"></div>
+                            </div>
+                            <div class="col-12 mt-2">
+                                <div class="row">
+                                    <div class="col-6 d-flex dialog">
+                                        <span class="fa-solid fa-minus" id="decremento" onclick="decrementar('sub-morada','num-morada', 'valor-morada', 'sub-morada','valor-morada')"></span>
+                                        <input type="text" class="form-control input" readonly id="num-morada" value="1">
+                                        <span class="fa-solid fa-plus" id="botonactivo" onclick="incrementar('sub-morada','num-morada', 'valor-morada')"></span>
+                                    </div>
+                                    <div class="col-6 d-flex dialog">
+                                        <button class="enviarpedido" onclick="sumar('valor-morada','num-morada','moradat')">Agregar
+                                            s/.<span id="valor-morada">0.00</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 plato">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                        <img src="img/limonada.webp" alt="Hierba Buena djm2 Pikol">
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="row margin-left">
+                            <div class="col-12 pedido">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <span class="izq" id="hierba">Hierba Buena:</span>
+                                        <select class="selectP zeniti" name="zeniti" id="hierbai" onchange="updateLimonadaText()">
+                                            <option selected>...</option>
+                                            <option value="Vaso">Vaso</option>
+                                            <option value="Jarra">Jarra</option>
+                                        </select>
+                                        <span id="hierbat" style="display: none;">0</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="der">s/.<span id="sub-hierba">0.00</span></p>
+                                    </div>
+                                </div>
+                                <div class="linea" style="margin-top:1em"></div>
+                            </div>
+                            <div class="col-12 mt-2">
+                                <div class="row">
+                                    <div class="col-6 d-flex dialog">
+                                        <span class="fa-solid fa-minus" id="decremento" onclick="decrementar('sub-hierba','num-hierba', 'valor-hierba', 'sub-hierba','valor-hierba')"></span>
+                                        <input type="text" class="form-control input" readonly id="num-hierba" value="1">
+                                        <span class="fa-solid fa-plus" id="botonactivo" onclick="incrementar('sub-hierba','num-hierba', 'valor-hierba')"></span>
+                                    </div>
+                                    <div class="col-6 d-flex dialog">
+                                        <button class="enviarpedido" onclick="sumar('valor-hierba','num-hierba','hierbat')">Agregar
+                                            s/.<span id="valor-hierba">0.00</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 plato">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                        <img src="img/limonada.webp" alt="Limonada Frozen djm2 Pikol">
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="row margin-left">
+                            <div class="col-12 pedido">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <span class="izq" id="limonadaf">Limonada Frozen:</span>
+                                        <select class="selectP zeniti" name="zeniti" id="limonadafi" onchange="updateLimonadaText()">
+                                            <option selected>...</option>
+                                            <option value="Vaso">Vaso</option>
+                                            <option value="Jarra">Jarra</option>
+                                        </select>
+                                        <span id="limonadaft" style="display: none;">0</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="der">s/.<span id="sub-limonadaf">0.00</span></p>
+                                    </div>
+                                </div>
+                                <div class="linea" style="margin-top:1em"></div>
+                            </div>
+                            <div class="col-12 mt-2">
+                                <div class="row">
+                                    <div class="col-6 d-flex dialog">
+                                        <span class="fa-solid fa-minus" id="decremento" onclick="decrementar('sub-limonadaf','num-limonadaf', 'valor-limonadaf', 'sub-limonadaf','valor-limonadaf')"></span>
+                                        <input type="text" class="form-control input" readonly id="num-limonadaf" value="1">
+                                        <span class="fa-solid fa-plus" id="botonactivo" onclick="incrementar('sub-limonadaf','num-limonadaf', 'valor-limonadaf')"></span>
+                                    </div>
+                                    <div class="col-6 d-flex dialog">
+                                        <button class="enviarpedido" onclick="sumar('valor-limonadaf','num-limonadaf','limonadaft')">Agregar
+                                            s/.<span id="valor-limonadaf">0.00</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 plato">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                        <img src="img/limonada.webp" alt="Maracuya Frozen djm2 Pikol">
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="row margin-left">
+                            <div class="col-12 pedido">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <span class="izq" id="maracuyaf">Maracuya Frozen:</span>
+                                        <select class="selectP zeniti" name="zeniti" id="maracuyafi" onchange="updateLimonadaText()">
+                                            <option selected>...</option>
+                                            <option value="Vaso">Vaso</option>
+                                            <option value="Jarra">Jarra</option>
+                                        </select>
+                                        <span id="maracuyaft" style="display: none;">0</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="der">s/.<span id="sub-maracuyaf">0</span></p>
+                                    </div>
+                                </div>
+                                <div class="linea" style="margin-top:1em"></div>
+                            </div>
+                            <div class="col-12 mt-2">
+                                <div class="row">
+                                    <div class="col-6 d-flex dialog">
+                                        <span class="fa-solid fa-minus" id="decremento" onclick="decrementar('sub-maracuyaf','num-maracuyaf', 'valor-maracuyaf', 'sub-maracuyaf','valor-maracuyaf')"></span>
+                                        <input type="text" class="form-control input" readonly id="num-maracuyaf" value="1">
+                                        <span class="fa-solid fa-plus" id="botonactivo" onclick="incrementar('sub-maracuyaf','num-maracuyaf', 'valor-maracuyaf')"></span>
+                                    </div>
+                                    <div class="col-6 d-flex dialog">
+                                        <button class="enviarpedido" onclick="sumar('valor-maracuyaf','num-maracuyaf','maracuyaft')">Agregar
+                                            s/.<span id="valor-maracuyaf">0</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 plato">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                        <img src="img/limonada.webp" alt="Maracuya Frozen djm2 Pikol">
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="row margin-left">
+                            <div class="col-12 pedido">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <span class="izq" id="moradaf">Chicha Morada Frozen:</span>
+                                        <select class="selectP zeniti" name="zeniti" id="moradafi" onchange="updateLimonadaText()">
+                                            <option selected>...</option>
+                                            <option value="Vaso">Vaso</option>
+                                            <option value="Jarra">Jarra</option>
+                                        </select>
+                                        <span id="moradaft" style="display: none;">0</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="der">s/.<span id="sub-moradaf">0</span></p>
+                                    </div>
+                                </div>
+                                <div class="linea" style="margin-top:1em"></div>
+                            </div>
+                            <div class="col-12 mt-2">
+                                <div class="row">
+                                    <div class="col-6 d-flex dialog">
+                                        <span class="fa-solid fa-minus" id="decremento" onclick="decrementar('sub-moradaf','num-moradaf', 'valor-moradaf', 'sub-moradaf','valor-moradaf')"></span>
+                                        <input type="text" class="form-control input" readonly id="num-moradaf" value="1">
+                                        <span class="fa-solid fa-plus" id="botonactivo" onclick="incrementar('sub-moradaf','num-moradaf', 'valor-moradaf')"></span>
+                                    </div>
+                                    <div class="col-6 d-flex dialog">
+                                        <button class="enviarpedido" onclick="sumar('valor-moradaf','num-moradaf','moradaft')">Agregar
+                                            s/.<span id="valor-moradaf">0</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 plato">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                        <img src="img/limonada.webp" alt="Maracuya Frozen djm2 Pikol">
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="row margin-left">
+                            <div class="col-12 pedido">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <span class="izq" id="hierbaf">Hierba Buena Frozen:</span>
+                                        <select class="selectP zeniti" name="zeniti" id="hierbafi" onchange="updateLimonadaText()">
+                                            <option selected>...</option>
+                                            <option value="Vaso">Vaso</option>
+                                            <option value="Jarra">Jarra</option>
+                                        </select>
+                                        <span id="hierbaft" style="display: none;">0</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="der">s/.<span id="sub-hierbaf">0</span></p>
+                                    </div>
+                                </div>
+                                <div class="linea" style="margin-top:1em"></div>
+                            </div>
+                            <div class="col-12 mt-2">
+                                <div class="row">
+                                    <div class="col-6 d-flex dialog">
+                                        <span class="fa-solid fa-minus" id="decremento" onclick="decrementar('sub-hierbaf','num-hierbaf', 'valor-hierbaf', 'sub-hierbaf','valor-hierbaf')"></span>
+                                        <input type="text" class="form-control input" readonly id="num-hierbaf" value="1">
+                                        <span class="fa-solid fa-plus" id="botonactivo" onclick="incrementar('sub-hierbaf','num-hierbaf', 'valor-hierbaf')"></span>
+                                    </div>
+                                    <div class="col-6 d-flex dialog">
+                                        <button class="enviarpedido" onclick="sumar('valor-hierbaf','num-hierbaf','hierbaft')">Agregar
+                                            s/.<span id="valor-hierbaf">0</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 plato">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                        <img src="img/limonada.webp" alt="Maracuya Frozen djm2 Pikol">
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="row margin-left">
+                            <div class="col-12 pedido">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <span class="izq" id="coca">Coca Cola:</span>
+                                        <select class="selectP cocai" name="cocai" id="cocai" onchange="updateGasText('coca', 'cocai', 'cocat', 'sub-coca', 'valor-coca', 5, 10, 15, 'num-coca')">
+                                            <option selected>...</option>
+                                            <option value="medioLitro">1/2 Litro</option>
+                                            <option value="Litro">Litro</option>
+                                            <option value="2Litros">2 Litros</option>
+                                        </select>
+                                        <span id="cocat">0</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="der">s/.<span id="sub-coca">0</span></p>
+                                    </div>
+                                </div>
+                                <div class="linea" style="margin-top:1em"></div>
+                            </div>
+                            <div class="col-12 mt-2">
+                                <div class="row">
+                                    <div class="col-6 d-flex dialog">
+                                        <span class="fa-solid fa-minus" id="decremento" onclick="decrementar('sub-coca','num-coca', 'valor-coca', 'sub-coca','valor-coca')"></span>
+                                        <input type="text" class="form-control input" readonly id="num-coca" value="1">
+                                        <span class="fa-solid fa-plus" id="botonactivo" onclick="incrementar('sub-coca','num-coca', 'valor-coca')"></span>
+                                    </div>
+                                    <div class="col-6 d-flex dialog">
+                                        <button class="enviarpedido" onclick="sumar('valor-coca','num-coca','cocat')">Agregar
+                                            s/.<span id="valor-coca">0</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 plato">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                        <img src="img/limonada.webp" alt="Inca Cola djm2 Pikol">
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="row margin-left">
+                            <div class="col-12 pedido">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <span class="izq" id="inka">Inka Cola:</span>
+                                        <select class="selectP inkai" name="inkai" id="inkai" onchange="updateGasText('inka', 'inkai', 'inkat', 'sub-inka', 'valor-inka', 5, 10, 15, 'num-inka')">
+                                            <option selected>...</option>
+                                            <option value="medioLitro">1/2 Litro</option>
+                                            <option value="Litro">Litro</option>
+                                            <option value="2Litros">2 Litros</option>
+                                        </select>
+                                        <span id="inkat">0</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="der">s/.<span id="sub-inka">0</span></p>
+                                    </div>
+                                </div>
+                                <div class="linea" style="margin-top:1em"></div>
+                            </div>
+                            <div class="col-12 mt-2">
+                                <div class="row">
+                                    <div class="col-6 d-flex dialog">
+                                        <span class="fa-solid fa-minus" id="decremento" onclick="decrementar('sub-inka','num-inka', 'valor-inka', 'sub-inka','valor-inka')"></span>
+                                        <input type="text" class="form-control input" readonly id="num-inka" value="1">
+                                        <span class="fa-solid fa-plus" id="botonactivo" onclick="incrementar('sub-inka','num-inka', 'valor-inka')"></span>
+                                    </div>
+                                    <div class="col-6 d-flex dialog">
+                                        <button class="enviarpedido" onclick="sumar('valor-inka','num-inka','inkat')">Agregar
+                                            s/.<span id="valor-inka">0</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 plato mb-5">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                        <img src="img/pikolpikolpikol.png" alt="Agua Pikol">
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="row margin-left">
+                            <div class="col-12 pedido">
+                                <span class="izq" id="agua">Agua c/s gas</span>
+                                <p class="der">s/.<span id="sub-agua">3.50</span></p>
+                                <div class="linea"></div>
+                            </div>
+                            <div class="col-12 mt-2">
+                                <div class="row">
+                                    <div class="col-6 d-flex dialog">
+                                        <span class="fa-solid fa-minus" id="decremento" onclick="decrementar('sub-agua','num-agua', 'valor-agua')"></span>
+                                        <input type="text" class="form-control input" readonly id="num-agua" value="1">
+                                        <span class="fa-solid fa-plus" id="botonactivo" onclick="incrementar('sub-agua','num-agua', 'valor-agua')"></span>
+                                    </div>
+                                    <div class="col-6 d-flex dialog">
+                                        <button class="enviarpedido" onclick="sumar('valor-agua','num-agua','agua')">Agregar s/.<span
+                                                id="valor-agua">3.50</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4"></div>
 
+
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 pie">
+                <h5>Hecho por <a href="https://www.facebook.com/MrkEmprendePeru" target="_blank">MRK</a></h5>
+            </div>
         </div>
     </div>
 

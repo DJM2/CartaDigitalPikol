@@ -292,6 +292,24 @@ p {
     opacity: 1;
 }
 
+.pie {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 0.5em;
+    h5 {
+        font-size: 1em!important;
+    }
+    a {
+        color: #fff;
+        text-decoration: none;
+        transition: 0.4s;
+        &:hover {
+            color: $principal;
+            transition: 0.4s;
+        }
+    }
+}
+
 @media (max-width: 480px) {
     /* .tituselect {
         float: right!important;
