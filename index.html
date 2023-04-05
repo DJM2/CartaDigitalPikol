@@ -81,13 +81,20 @@
             </div>
             <div class="col-12 mb-4" style="text-align: center; margin: auto; display: grid;">
                 <div class="row">
-                    <div class="col-6">
-                        <a onclick="wasa()" class="boton-wasa"><i class="fab fa-whatsapp"></i> Enviar pedido</a>
+                    <div class="col-4" id="wasa">
+                        <a onclick="wasa()" class="boton-wasa"><i class="fab fa-whatsapp"></i> Delivery</a>
                     </div>
-                    <div class="col-6">
+                    <div class="col-8" id="mostrarPedido">
+                        <span>Mostrar este pedido al mozo Pikol</span>
+                    </div>
+                    <div class="col-4" id="local">
+                        <a onclick="local()" class="boton-local"><i class="fa fa-home"></i> En local</a>
+                    </div>
+                    <div class="col-4">
                         <a id="popup1-close-button" class="enviarpedido" onclick="refresh()">Nuevo
                             pedido
                         </a>
+
                     </div>
                 </div>
             </div>
@@ -1480,10 +1487,13 @@
                                         <span class="izq" id="zenit">Zenit:</span>
                                         <select class="selectP zeniti" name="zeniti" id="zeniti" onchange="updateInfusionText('zenit', 'zeniti', 'zenitt')">
                                             <option selected>...</option>
-                                            <option value="Trigonometria (IBU 19 - ALC5%)">Trigonometria (IBU 19 - ALC5%)</option>
+                                            <option value="Trigonometria (IBU 19 - ALC5%)">Trigonometria (IBU 19 -
+                                                ALC5%)</option>
                                             <option value="Pale Ale (IBU 34 - ALC2%)">Pale Ale (IBU 34 - ALC2%)</option>
-                                            <option value="La hinchada peruana (IBU 19 - ALC5.5%)">La hinchada peruana (IBU 19 - ALC5.5%)</option>
-                                            <option value="Porter con quinua (IBU 28 - ALC6.5%)">Porter con quinua (IBU 28 - ALC6.5%)</option>
+                                            <option value="La hinchada peruana (IBU 19 - ALC5.5%)">La hinchada peruana
+                                                (IBU 19 - ALC5.5%)</option>
+                                            <option value="Porter con quinua (IBU 28 - ALC6.5%)">Porter con quinua (IBU
+                                                28 - ALC6.5%)</option>
                                         </select>
                                         <span id="zenitt" style="display: none;">0</span>
 

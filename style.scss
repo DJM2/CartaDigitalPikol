@@ -68,6 +68,34 @@ body {
     }
 }
 
+.boton-local {
+    background: #1a4275;
+    color: #fff;
+    text-decoration: none;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+    border-radius: 8px;
+    transition: 0.4s;
+    cursor: pointer;
+    &:hover {
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        color: #1a4275;
+        background: #fff;
+        border: 1px solid #1a4275;
+        transition: 0.4s;
+    }
+}
+
+#mostrarPedido {
+    background: #ff0000;
+    color: #fff;
+    border-radius: 4px;
+    padding: 0.3em;
+    display: none;
+}
+
 #popup1-dialog {
     border-radius: 10px;
     border: 1px solid #ff0000

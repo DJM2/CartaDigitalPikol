@@ -170,3 +170,12 @@ function updateGasText(limonadaId, selectId, resultId, sub, valor, precioV, prec
         texto.innerHTML = `${infusionText} ${valueText}`;
     });
 }
+
+function local() {
+    var quitar = document.getElementById('wasa');
+    quitar.style.display = 'none';
+    var local = document.getElementById('local');
+    local.style.display = 'none';
+    var mostrar = document.getElementById('mostrarPedido');
+    mostrar.style.display = 'block';
+}
